@@ -1,1 +1,50 @@
+import java.util.Scanner;
+
+public class MatricesAsesorias {
+
+    static void main() {
+
+            int filas = ingresarEntero("Ingrese la cantidad de filas:");
+            int columnas = ingresarEntero("ingrese la cantidad de columnas:");
+            int[][] numeros = ingresarMatrizEnteros(filas, columnas, "Ingrese  los números:");
+            mostrarMatriz(numeros);
+
+        }
+
+        public static int ingresarEntero(String mensaje) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print(mensaje);
+            int valorEntero = scanner.nextInt();
+            return valorEntero;
+        }
+
+        public static int[][] ingresarMatrizEnteros(int filas, int columnas, String mensaje) {
+
+            int[][] numeros = new int[filas][columnas];
+
+            for (int i = 0; i < numeros.length; i++) {
+
+                for (int j = 0; j < numeros[i].length; j++) {
+                    numeros[i][j] = ingresarEntero(mensaje + "en la posición (" + i + " ; " + j + "):");
+
+
+                }
+
+            }
+            return numeros;
+        }
+
+        public static void mostrarMatriz(int[][] numeros) {
+            for (int i = 0; i < numeros.length; i++) {
+
+                for (int j = 0; j < numeros[i].length; j++) {
+                    System.out.print(numeros[i][j] + "");
+                }
+                System.out.println();
+            }
+        }
+    }
+
+
+
 
